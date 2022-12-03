@@ -1,5 +1,5 @@
 {% set name = "skunk" %}
-{% set version = "0.4.0" %}
+{% set version = "1.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/skunk-{{ version }}.tar.gz
-  sha256: b08292db969f3d0490fa9f23c5472f877d12c98de606fc9bbd33766f8cec6caa
+  sha256: b5f13e8dfdc5e4db36fc7b8bb9a677dc0c9a923f1397cf553d4d3d1eb4f494bd
 
 build:
   number: 0
