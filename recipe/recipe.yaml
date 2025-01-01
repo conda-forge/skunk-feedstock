@@ -1,0 +1,41 @@
+context:
+  name: skunk
+  version: 0.4.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/skunk-${{ version }}.tar.gz
+  sha256: b08292db969f3d0490fa9f23c5472f877d12c98de606fc9bbd33766f8cec6caa
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - matplotlib-base
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - skunk
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Insert SVGs into matplotlib figures
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/whitead/skunk
+
+extra:
+  recipe-maintainers:
+    - hadim
